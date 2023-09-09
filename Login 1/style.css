@@ -1,0 +1,88 @@
+body{
+    background-image: url(Wallpaper.jpg);
+    background-size: cover;
+    font-size: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formBox{
+    width: 500px;
+    height: 500px;
+    /* background-color: yellow;     */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    /* 
+  
+    position: relative;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    backdrop-filter: blur(15px); */
+ }
+ /*
+label{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    transition: .5s;
+    color: #fff;
+}
+ input:focus ~label{
+    top:-10px;
+}
+*/
+.inputfld{
+   /* background-color: red; */
+   height: 100px;
+   width: 400px;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+} 
+.inputfld:nth-child(1),.inputfld:nth-child(2)
+{
+  border-bottom:solid #e5b840 4px;
+
+}
+.inputfld label{
+    position: absolute;
+    top:50%;
+    left: 5px;
+    color: white;
+    pointer-events: none;
+    transition: transform 1s;
+}
+
+
+.inputfld input{
+    width: 100%;
+    font-size: 1em;
+    background-color: transparent;
+   border: none;  
+   outline: none;
+    padding: 0 35px 0 5px;
+}
+
+.inputfld input:focus ~label{
+  transform: translateY(-60%);
+}
+
+.inputfld button{
+  width: 90%;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  color: white;
+  border:solid #e5b840 4px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+}

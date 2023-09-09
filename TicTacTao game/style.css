@@ -1,0 +1,61 @@
+.GameContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+}
+
+.GameCol {
+    border-style: solid;
+    
+    font-size: 35px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+.b-TL {
+    border-top: 0px;
+    border-left: 0px;
+}
+
+.b-TR {
+    border-top: 0px;
+    border-right: 0px;
+}
+
+.b-BL {
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.b-BR {
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+.b-L{
+    border-left: 0px;
+}
+
+.b-R{
+    border-right: 0px;
+}
+
+.b-T{
+    border-top: 0px;
+}
+
+.b-B{
+    border-bottom: 0px;
+}
+#onClickbtnReset{
+    display: none;
+}
+#winImg{
+    display: none;
+    position: absolute;
+    top: 10vw;
+    left: 30vw;
+}

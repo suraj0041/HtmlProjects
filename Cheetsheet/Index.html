@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cheetsheet</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div>
+            cheet sheet for Tic Tac Tao
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container-item">
+            <div class="heading">
+                Html code
+            </div>
+            <div class="body">
+                <pre><code class="language-html">&lt;div class="container-fluid"&gt;
+    &lt;h1&gt;Tix Tac Tac&lt;/h1&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="GameContainer"&gt;          
+            &lt;div class="GameCol b-TL"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-T"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-TR"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-l"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-R"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-BL"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-B"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+            &lt;div class="GameCol b-BR"&gt;&lt;span class="GameColText"&gt;&lt;/span&gt; &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="info"&gt;
+            &lt;button id="onClickbtnReset"&gt;
+                Reset
+            &lt;/button&gt;
+            &lt;img src="41e74b0f91b7cb7df6b73e34ae8528a4.gif" id="winImg"/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;        
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="container-item">
+            <div class="heading">
+                CSS
+            </div>
+            <div class="body">
+                <pre><code class="language-css">.GameContainer {
+display: grid;
+grid-template-columns: repeat(3, 50px);
+grid-template-rows: repeat(3, 50px);
+}
+
+.GameCol {
+border-style: solid;
+
+font-size: 35px;
+text-align: center;
+}
+
+.container{
+display: flex;
+justify-content: center;
+}
+.b-TL {
+border-top: 0px;
+border-left: 0px;
+}
+
+.b-TR {
+border-top: 0px;
+border-right: 0px;
+}
+
+.b-BL {
+border-bottom: 0px;
+border-left: 0px;
+}
+
+.b-BR {
+border-bottom: 0px;
+border-right: 0px;
+}
+
+.b-L{
+border-left: 0px;
+}
+
+.b-R{
+border-right: 0px;
+}
+
+.b-T{
+border-top: 0px;
+}
+
+.b-B{
+border-bottom: 0px;
+}
+#onClickbtnReset{
+display: none;
+}
+#winImg{
+display: none;
+position: absolute;
+top: 10vw;
+left: 30vw;
+}
+                </code></pre>
+            </div>
+        </div>
+        <div class="container-item">
+            <div class="heading">
+                Javascript Game Core 
+            </div>
+            <div class="body">
+                <pre><code class="language-javascript">let turn = 'X';
+let GameCol = document.getElementsByClassName('GameCol');
+Array.from(GameCol).forEach((box) => {
+    let GameColText = box.querySelector('.GameColText');
+    box.addEventListener('click', (e) => {
+        if (GameColText.innerHTML === '') {
+            GameColText.innerHTML = turn;
+            ChangeTurn();
+            CheckWin();
+        }
+    });
+
+});</code></pre>
+            </div>
+        </div>
+        <div class="container-item">
+            <div class="heading">
+                Javascript CheckWin
+            </div>
+            <div class="body">
+                <pre><code class="language-javascript">const CheckWin = () => {
+let WinCondition = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 3, 6],
+
+    [0, 4, 8],
+    [6, 4, 2],
+];
+
+let GameColText = document.getElementsByClassName('GameColText');
+WinCondition.map((m) => {
+    if (GameColText[m[0]].innerHTML === GameColText[m[1]].innerHTML &&
+        GameColText[m[0]].innerHTML === GameColText[m[2]].innerHTML && GameColText[m[0]].innerHTML !== '') {
+        document.getElementById("winImg").style.display = "block";
+        document.getElementById("onClickbtnReset").style.display = "block";
+        alert(GameColText[m[0]].innerHTML + ' Win');
+
+    }
+});</code></pre>
+            </div>
+        </div>
+        <div class="container-item">
+            <div class="heading">
+                Javascript ChangeTurn
+            </div>
+            <div class="body">
+                <pre><code class="language-javascript">const ChangeTurn = () => {
+    if (turn === 'X')
+        turn = '0';
+    else
+        turn = 'X';
+};</code></pre>
+            </div>
+        </div>
+        <div class="container-item">
+            <div class="heading">
+                Javascript Reset button
+            </div>
+            <div class="body">
+                <pre><code class="language-javascript">document.getElementById("onClickbtnReset").addEventListener('click', (e) => {
+    let GameColText = document.getElementsByClassName('GameColText');
+
+    Array.from(GameColText).forEach((e) => {
+        e.innerHTML = '';
+    });
+    document.getElementById("winImg").style.display = "none";
+    document.getElementById("onClickbtnReset").style.display = "none";
+});</code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

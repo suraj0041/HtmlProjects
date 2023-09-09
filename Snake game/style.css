@@ -1,0 +1,36 @@
+.title{
+    margin: auto;
+    width: fit-content;
+}
+
+#board{
+    margin: auto;
+    width: 37vw;
+    height: 66vh;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr) ;
+    grid-template-columns: repeat(18, 1fr) ;
+    background-color: white;
+    border: solid;
+}
+
+.head{
+    background-color: rgb(236, 84, 84);
+    /* background-image: url(snakeMouth.png);
+    background-size: 100%; */
+}
+
+.snake{
+background-color: rgb(241, 210, 68);
+border: wheat;
+border-radius: 30px;
+}
+
+.food{
+    /* background-color: green; */
+    background-image: url(mouse.gif);
+    background-size: 100%;
+    /* background-color: rgb(241, 210, 68); */
+    border: wheat;
+    border-radius: 30px;
+}

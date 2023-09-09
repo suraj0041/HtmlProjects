@@ -1,0 +1,29 @@
+*{
+   padding: 0px;
+   margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    background-color: black;
+    font-size: larger;
+    font: bold; 
+}
+nav div{
+    width: fit-content;
+    margin: auto;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+}
+
+.container-item{
+    width: 60vw;
+    margin: auto;
+    margin-top: 20px;
+}
+.container-item .heading{
+    margin-bottom: 10px;
+}
+.container-item .body{
+    margin-bottom: 10px;
+}
