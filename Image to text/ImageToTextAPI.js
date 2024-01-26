@@ -1,4 +1,6 @@
-let apikey = 'K82851621988957'
+let apikey = 'ABCD'
+//https://ocr.space/OCRAPI
+
 
 function test(img_base64String) {
 
